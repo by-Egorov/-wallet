@@ -1,0 +1,139 @@
+body {
+	margin: 0;
+	font-family: 'Ubuntu', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.App {
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+}
+
+//Header
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+	padding-top: 50px;
+	&__title {
+		font-size: 28px;
+		font-weight: 700;
+	}
+	&__subtitle {
+		font-weight: 700;
+	}
+}
+
+//Balance
+.balance {
+	display: grid;
+	grid-template-rows: 50px;
+	grid-template-areas: 'all all' 'income expenses';
+	margin: 0 auto;
+	width: 350px;
+	min-height: 150px;
+	border: 1px solid #333;
+	border-radius: 27px;
+
+	&__all {
+		grid-area: all;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 15px;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 10%;
+			width: 80%;
+			border-bottom: 1px solid #c4c4c4;
+		}
+		&-title {
+			font-weight: 600;
+		}
+		&-meaning {
+			font-weight: 700;
+		}
+	}
+	&__income {
+		grid-area: income;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-right: 0.5px solid #c4c4c4;
+		&-title {
+			font-weight: 600;
+		}
+		&-meaning {
+			color: green;
+		}
+	}
+	&__expenses {
+		grid-area: expenses;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-left: 0.5px solid #c4c4c4;
+		&-title {
+			font-weight: 600;
+		}
+		&-meaning {
+			color: red;
+		}
+	}
+}
+
+//Story
+.story {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 15px;
+	margin: 0 auto;
+	&__title {
+		font-weight: 700;
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+	}
+	&__item-income {
+		display: flex;
+		justify-content: space-between;
+		width: 310px;
+		padding: 10px 20px;
+		border-top: 1px solid #222;
+		border-bottom: 1px solid #222;
+		border-left: 7px solid green;
+		border-right: 7px solid green;
+		border-radius: 10px;
+	}
+	&__item-expenses{
+		display: flex;
+		justify-content: space-between;
+		width: 310px;
+		padding: 10px 20px;
+		border-top: 1px solid #222;
+		border-bottom: 1px solid #222;
+		border-left: 7px solid red;
+		border-right: 7px solid red;
+		border-radius: 10px;
+	}
+}
