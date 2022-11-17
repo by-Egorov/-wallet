@@ -3,7 +3,7 @@ import React from 'react'
 const Story = () => {
 	return (
 		<div className='story'>
-			<div className='story__title'>Исторя расходов</div>
+			<div className='story__title'>История расходов</div>
 			<ul className='story__list'>
 			<li className='story__item-income'>
 					<span className='story__item-title'><span className='income__text'>Получил зарплату</span></span>

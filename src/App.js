@@ -6,7 +6,7 @@ import Story from './components/Story/ Story'
 
 function App() {
   return (
-    <div className="App">
+    <div className="wrapper">
 		<Header/>
 		<Balance/>
 		<Story/>

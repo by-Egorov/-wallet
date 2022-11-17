@@ -14,7 +14,7 @@ ul {
 	padding: 0;
 	margin: 0;
 }
-.App {
+.wrapper {
 	display: flex;
 	flex-direction: column;
 	row-gap: 50px;
@@ -117,7 +117,7 @@ ul {
 	&__item-income {
 		display: flex;
 		justify-content: space-between;
-		width: 310px;
+		width: 303px;
 		padding: 10px 20px;
 		border-top: 1px solid #222;
 		border-bottom: 1px solid #222;
@@ -125,15 +125,68 @@ ul {
 		border-right: 7px solid green;
 		border-radius: 10px;
 	}
-	&__item-expenses{
+	&__item-expenses {
 		display: flex;
 		justify-content: space-between;
-		width: 310px;
+		width: 303px;
 		padding: 10px 20px;
 		border-top: 1px solid #222;
 		border-bottom: 1px solid #222;
 		border-left: 7px solid red;
 		border-right: 7px solid red;
 		border-radius: 10px;
+	}
+}
+
+//Operation
+.operation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 350px;
+	background: #c4c4c4;
+	border-radius: 27px;
+	padding-bottom: 20px;
+	margin: 0 auto;
+	&__title {
+		font-weight: 700;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		row-gap: 15px;
+		width: 75%;
+		padding: 0 15px;
+	}
+	&__form--num,
+	&__form--text {
+		width: 100%;
+		height: 25px;
+		border-radius: 6px;
+		border: none;
+	}
+	&__buttons {
+		display: flex;
+		justify-content: space-around;
+		& button {
+			border: none;
+			color: #fff;
+			font-weight: 600;
+			text-transform: uppercase;
+			padding: 10px 25px;
+			border-radius: 10px;
+		}
+	}
+	&__buttons--income {
+		background: rgb(0, 128, 0);
+		&:hover {
+			background: rgba(0, 128, 0, 0.5);
+		}
+	}
+	&__buttons--expenses {
+		background: rgb(225, 0, 0);
+		&:hover {
+			background: rgba(255, 0, 0, 0.5);
+		}
 	}
 }
