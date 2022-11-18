@@ -4,6 +4,8 @@ const Wallet = ({ todo, setTodo }) => {
 	let income = numberValue + numberValue
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
+        const [counter, setCounter] = useState(counter += numberValue)
+        
 
 	function addTodo() {
 		setTodo( [...todo, {
@@ -24,7 +26,7 @@ const Wallet = ({ todo, setTodo }) => {
 				<div className='balance__all'>
 					<div className='balance__all-title'>Баланс</div>
 					<div className='balance__all-meaning'>
-						<span className='balance__all-meaning--current'>{numberValue}₽</span>
+						<span className='balance__all-meaning--current'>{counter}₽</span>
 					</div>
 				</div>
 				<div className='balance__income'>
