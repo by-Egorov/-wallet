@@ -4,7 +4,7 @@ const Wallet = ({ todo, setTodo }) => {
 	let income = numberValue + numberValue
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
-        const [counter, setCounter] = useState(counter += numberValue)
+        const [count, setCount] = useState('0')
         
 
 	function addTodo() {
@@ -26,7 +26,7 @@ const Wallet = ({ todo, setTodo }) => {
 				<div className='balance__all'>
 					<div className='balance__all-title'>Баланс</div>
 					<div className='balance__all-meaning'>
-						<span className='balance__all-meaning--current'>0₽</span>
+						<span className='balance__all-meaning--current'>{count}₽</span>
 					</div>
 				</div>
 				<div className='balance__income'>
@@ -80,6 +80,9 @@ const Wallet = ({ todo, setTodo }) => {
 						<button
 							className='operation__buttons--income'
 							onClick={()=> addTodo()}
+                                                        onClick={()=> setCount(
+                                                         count + numberValue
+                                                        )}
 						>
 							Доход
 						</button>
