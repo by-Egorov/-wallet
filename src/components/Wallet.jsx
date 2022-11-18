@@ -26,7 +26,7 @@ const Wallet = ({ todo, setTodo }) => {
 				<div className='balance__all'>
 					<div className='balance__all-title'>Баланс</div>
 					<div className='balance__all-meaning'>
-						<span className='balance__all-meaning--current'>{counter}₽</span>
+						<span className='balance__all-meaning--current'>0₽</span>
 					</div>
 				</div>
 				<div className='balance__income'>
