@@ -86,7 +86,7 @@ const Wallet = ({ todo, setTodo }) => {
 						</button>
 						<button className='operation__buttons--expenses'
                                                         
-count - numberValue
+
                                                         >
 							Расход
 						</button>
