@@ -9,7 +9,8 @@ const Wallet = ({ todo, setTodo }) => {
 		setTodo( [...todo, {
 			id: 4,
 			title: textValue,
-			sttus: false
+                        num: numberValue,
+			status: false
 		}])
 	}
 
@@ -30,7 +31,7 @@ const Wallet = ({ todo, setTodo }) => {
 					<div className='balance__income-title'>Доходы</div>
 					<div className='balance__income-meaning'>
 						<span className='balance__income-meaning--current'>
-							+ {numberValue} ₽
+							+0 ₽
 						</span>
 					</div>
 				</div>
