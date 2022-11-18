@@ -79,7 +79,7 @@ const Wallet = ({ todo, setTodo }) => {
 					<div className='operation__buttons'>
 						<button
 							className='operation__buttons--income'
-							onClick={()=> addTodo()}
+							
                                                         onClick={()=> setCount(
                                                          count = numberValue
                                                         )}
