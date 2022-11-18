@@ -86,7 +86,11 @@ const Wallet = ({ todo, setTodo }) => {
 						>
 							Доход
 						</button>
-						<button className='operation__buttons--expenses'>
+						<button className='operation__buttons--expenses'
+onClick={()=> setCount(
+                                                         count = numberValue
+count - numberValue
+                                                        )} >
 							Расход
 						</button>
 					</div>
