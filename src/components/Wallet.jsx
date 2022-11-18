@@ -33,7 +33,7 @@ const Wallet = ({ todo, setTodo }) => {
 					<div className='balance__income-title'>Доходы</div>
 					<div className='balance__income-meaning'>
 						<span className='balance__income-meaning--current'>
-							+0 ₽
+							+ {Number(numberValue) + Number(numberValue)} {money}
 						</span>
 					</div>
 				</div>
@@ -41,7 +41,7 @@ const Wallet = ({ todo, setTodo }) => {
 					<div className='balance__expenses-title'>Расходы</div>
 					<div className='balance__expenses-meaning'>
 						<span className='balance__expenses-meaning--current'>
-							-0 ₽
+							-{Number(numberValue) - Number(numberValue)} {money}
 						</span>
 					</div>
 				</div>
