@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
 const Wallet = ({ todo, setTodo }) => {
-	let income = numberValue + numberValue
+	
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
-        const [count, setCount] = useState(0)
+        const money = '₽'
         
 
 	function addTodo() {
@@ -26,7 +26,7 @@ const Wallet = ({ todo, setTodo }) => {
 				<div className='balance__all'>
 					<div className='balance__all-title'>Баланс</div>
 					<div className='balance__all-meaning'>
-						<span className='balance__all-meaning--current'>{count}₽</span>
+						<span className='balance__all-meaning--current'>{Number(numberValue) +Number(number.Value)} {money}</span>
 					</div>
 				</div>
 				<div className='balance__income'>
@@ -80,17 +80,14 @@ const Wallet = ({ todo, setTodo }) => {
 						<button
 							className='operation__buttons--income'
 							
-                                                        onClick={()=> addTodo(
-                                                        setCount( Number(numberValue) + count)
-                                                        )}
+                                                       
 						>
 							Доход
 						</button>
 						<button className='operation__buttons--expenses'
-onClick={()=> setCount(
-                                                         count = numberValue
+                                                        
 count - numberValue
-                                                        )} >
+                                                        >
 							Расход
 						</button>
 					</div>
