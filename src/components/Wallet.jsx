@@ -5,9 +5,7 @@ const Wallet = ({ todo, setTodo }) => {
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
         const money = '₽'
-const [count, setCount] = useState({
- count = Number(count) + Number(numberValue)
-})
+const [count, setCount] = useState(count = Number(count) + Number(numberValue))
         
 
 	function addTodo() {
