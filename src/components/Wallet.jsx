@@ -4,7 +4,7 @@ const Wallet = ({ todo, setTodo }) => {
 	let income = numberValue + numberValue
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
-        const [count, setCount] = useState('')
+        const [count, setCount] = useState(0)
         
 
 	function addTodo() {
