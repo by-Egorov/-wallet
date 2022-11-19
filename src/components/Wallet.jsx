@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import uuid from 'react-uuid'
 
 const Wallet = ({ todo, setTodo }) => {
 	const [textValue, setTextValue] = useState('')
@@ -12,7 +13,7 @@ const Wallet = ({ todo, setTodo }) => {
 		setTodo([
 			...todo,
 			{
-				id: null,
+				id: uuid(),
 				title: textValue,
 				num: numberValue,
 				class: 'receivedBy'
@@ -28,7 +29,7 @@ const Wallet = ({ todo, setTodo }) => {
 		setTodo([
 			...todo,
 			{
-				id: null,
+				id: uuid(),
 				title: textValue,
 				num: numberValue,
 				class: 'spentOn'
@@ -39,13 +40,7 @@ const Wallet = ({ todo, setTodo }) => {
 		setTextValue('')
 		setNumberValue('')
 	}
-	useEffect(() => {
-		setCountplus(JSON.parse(window.localStorage.getItem('countplus')))
-	 }, [])
-  
-	 useEffect(() => {
-		window.localStorage.setItem('countplus', countplus)
-	 }, [countplus])
+	
 
 	return (
 		<div className='wrapper'>
