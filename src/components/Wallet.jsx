@@ -1,46 +1,44 @@
 import React, { useState } from 'react'
 
-
 const Wallet = ({ todo, setTodo }) => {
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
 	const money = '₽'
 	const [countplus, setCountplus] = useState(0)
 	const [countminus, setCountminus] = useState(0)
+	const [balance, setBalance] = useState(0)
 
 	function addTodo() {
-		
 		setTodo([
 			...todo,
 			{
 				id: null,
 				title: textValue,
 				num: numberValue,
-				class: 'receivedBy',
-				status: '+',
+				class: 'receivedBy'
 			},
 		])
+		setBalance(balance + Number(numberValue))
+		setCountplus(countplus + Number(numberValue))
 		setTextValue('')
 		setNumberValue('')
 	}
 
 	function addTodoR() {
-		
 		setTodo([
 			...todo,
 			{
 				id: null,
 				title: textValue,
 				num: numberValue,
-				class: 'spentOn',
-				status: '-',
+				class: 'spentOn'
 			},
 		])
+		setCountminus(countminus + Number(numberValue))
+		setBalance(balance -  Number(numberValue))
 		setTextValue('')
 		setNumberValue('')
 	}
-
-	
 
 	return (
 		<div className='wrapper'>
@@ -53,7 +51,7 @@ const Wallet = ({ todo, setTodo }) => {
 					<div className='balance__all-title'>Баланс</div>
 					<div className='balance__all-meaning'>
 						<span className='balance__all-meaning--current'>
-							{countplus} {money}
+							{balance} {money}
 						</span>
 					</div>
 				</div>
@@ -78,9 +76,14 @@ const Wallet = ({ todo, setTodo }) => {
 				<div className='story__title'>История расходов</div>
 				<ul className='story__list'>
 					{todo.map((item) => (
-						<li key={item.id} className={'story__item-income ' + (item.class)}>
+						<li
+							key={item.id}
+							className={'story__item-income ' + item.class}
+						>
 							<span className='story__item-title'>{item.title}</span>
-							<span className='income__number'>{item.status} {item.num} ₽</span>
+							<span className='income__number'>
+								{item.num} ₽
+							</span>
 						</li>
 					))}
 				</ul>
@@ -108,7 +111,6 @@ const Wallet = ({ todo, setTodo }) => {
 						<button
 							className='operation__buttons--income'
 							onClick={() => {
-								setCountplus(countplus + Number(numberValue))
 								addTodo()
 							}}
 						>
@@ -117,7 +119,6 @@ const Wallet = ({ todo, setTodo }) => {
 						<button
 							className='operation__buttons--expenses'
 							onClick={() => {
-								setCountminus(countminus + Number(numberValue))
 								addTodoR()
 							}}
 						>
