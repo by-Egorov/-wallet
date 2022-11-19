@@ -3,6 +3,7 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: #ede4e4;
 }
 
 code {
@@ -18,7 +19,6 @@ ul {
 	display: flex;
 	flex-direction: column;
 	row-gap: 50px;
-	background: #ede4e4;
 }
 
 //Header
