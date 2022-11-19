@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Wallet = ({ todo, setTodo }) => {
 	const [textValue, setTextValue] = useState('')
@@ -39,6 +39,13 @@ const Wallet = ({ todo, setTodo }) => {
 		setTextValue('')
 		setNumberValue('')
 	}
+	useEffect(() => {
+		setCountplus(JSON.parse(window.localStorage.getItem('countplus')))
+	 }, [])
+  
+	 useEffect(() => {
+		window.localStorage.setItem('countplus', countplus)
+	 }, [countplus])
 
 	return (
 		<div className='wrapper'>
