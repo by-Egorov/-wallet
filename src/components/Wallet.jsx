@@ -63,12 +63,23 @@ const Wallet = ({ todo, setTodo }) => {
 			[]
 		)
 	}
+	function clearCalc() {
+		setBalance(0)
+		setCountplus(0)
+		setCountminus(0)
+	}
 
 	return (
 		<div className='wrapper'>
 			<div className='header'>
 				<div className='header__title'>Кошелек</div>
 				<div className='header__subtitle'>Калькулятор расходов</div>
+				<div className="clearHistory">
+						<button onClick={() => {clearCalc()}}>
+						Очистить
+						<i class="fa fa-trash-o" aria-hidden="true"></i>
+						</button>
+					</div>
 			</div>
 			<div className='balance'>
 				<div className='balance__all'>
@@ -98,14 +109,15 @@ const Wallet = ({ todo, setTodo }) => {
 			</div>
 			<div className='story'>
 				<div className='story__title'>
-					История расходов
-					</div>
+					<div className="title">История расходов</div>
 					<div className="clearHistory">
 						<button onClick={() => {clearHistory()}}>
 						Очистить
 						<i class="fa fa-trash-o" aria-hidden="true"></i>
 						</button>
 					</div>
+					</div>
+					
 				<ul className='story__list'>
 					{todo.map((item) => (
 						<li
