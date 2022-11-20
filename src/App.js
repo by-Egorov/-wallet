@@ -5,7 +5,7 @@ import Wallet from './components/Wallet'
 
 function App() {
 
-	const [todo, setTodo] = useState([], JSON.parse(localStorage.getItem('todo')) || [])
+	const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todo')) || [])
 	
 	useEffect(() => {
 		localStorage.setItem('todo', JSON.stringify(todo))

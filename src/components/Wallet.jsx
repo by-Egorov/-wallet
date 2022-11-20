@@ -5,9 +5,27 @@ const Wallet = ({ todo, setTodo }) => {
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
 	const money = '₽'
-	const [countplus, setCountplus] = useState(0)
-	const [countminus, setCountminus] = useState(0)
-	const [balance, setBalance] = useState(0)
+	const [countplus, setCountplus] = useState(
+		JSON.parse(localStorage.getItem('countplus')) || 0
+	)
+
+	useEffect(() => {
+		localStorage.setItem('countplus', JSON.stringify(countplus))
+	}, [countplus])
+	const [countminus, setCountminus] = useState(
+		JSON.parse(localStorage.getItem('countminus')) || 0
+	)
+
+	useEffect(() => {
+		localStorage.setItem('countminus', JSON.stringify(countminus))
+	}, [countminus])
+	const [balance, setBalance] = useState(
+		JSON.parse(localStorage.getItem('balance')) || 0
+	)
+
+	useEffect(() => {
+		localStorage.setItem('balance', JSON.stringify(balance))
+	}, [balance])
 
 	function addTodo() {
 		setTodo([
@@ -16,7 +34,7 @@ const Wallet = ({ todo, setTodo }) => {
 				id: uuid(),
 				title: textValue,
 				num: numberValue,
-				class: 'receivedBy'
+				class: 'receivedBy',
 			},
 		])
 		setBalance(balance + Number(numberValue))
@@ -32,15 +50,14 @@ const Wallet = ({ todo, setTodo }) => {
 				id: uuid(),
 				title: textValue,
 				num: numberValue,
-				class: 'spentOn'
+				class: 'spentOn',
 			},
 		])
 		setCountminus(countminus + Number(numberValue))
-		setBalance(balance -  Number(numberValue))
+		setBalance(balance - Number(numberValue))
 		setTextValue('')
 		setNumberValue('')
 	}
-	
 
 	return (
 		<div className='wrapper'>
@@ -83,9 +100,7 @@ const Wallet = ({ todo, setTodo }) => {
 							className={'story__item-income ' + item.class}
 						>
 							<span className='story__item-title'>{item.title}</span>
-							<span className='income__number'>
-								{item.num} ₽
-							</span>
+							<span className='income__number'>{item.num} ₽</span>
 						</li>
 					))}
 				</ul>
