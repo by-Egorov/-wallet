@@ -1,6 +1,6 @@
 body {
 	margin: 50px 0;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: #c3c3c3;
@@ -90,15 +90,7 @@ ul {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		border-left: 0.5px solid #c4c4c4;
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			width: 80%;
-			border-right: eegg 1px solid #c4c4c4;
-		}
+		position: relative;
 		&-title {
 			font-weight: 600;
 		}
@@ -114,9 +106,8 @@ ul {
 	flex-direction: column;
 	align-items: center;
 	row-gap: 15px;
-	max-height: 250px;
 	margin: 0 auto;
-	overflow: scroll;
+	
 	&__title {
 		font-weight: 700;
 	}
@@ -124,6 +115,8 @@ ul {
 		display: flex;
 		flex-direction: column;
 		row-gap: 10px;
+		max-height: 250px;
+		overflow: scroll;
 	}
 	&__item-income {
 		display: flex;
@@ -142,6 +135,17 @@ ul {
 		border-top: 1px solid #222;
 		border-bottom: 1px solid #222;
 		border-radius: 10px;
+	}
+}
+.clearHistory {
+	& button {
+		padding: 5px 10px;
+		background: transparent;
+		border-radius: 7px;
+		outline: none;
+		& i {
+			padding-left: 5px;
+		}
 	}
 }
 .receivedBy {

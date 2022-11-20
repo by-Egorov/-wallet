@@ -58,6 +58,11 @@ const Wallet = ({ todo, setTodo }) => {
 		setTextValue('')
 		setNumberValue('')
 	}
+	function clearHistory() {
+		setTodo(
+			[]
+		)
+	}
 
 	return (
 		<div className='wrapper'>
@@ -92,7 +97,15 @@ const Wallet = ({ todo, setTodo }) => {
 				</div>
 			</div>
 			<div className='story'>
-				<div className='story__title'>История расходов</div>
+				<div className='story__title'>
+					История расходов
+					</div>
+					<div className="clearHistory">
+						<button onClick={() => {clearHistory()}}>
+						Очистить
+						<i class="fa fa-trash-o" aria-hidden="true"></i>
+						</button>
+					</div>
 				<ul className='story__list'>
 					{todo.map((item) => (
 						<li
