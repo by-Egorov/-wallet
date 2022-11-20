@@ -5,7 +5,12 @@ const Wallet = ({ todo, setTodo }) => {
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
 	const money = '₽'
-	const [date, setDate] = useState('')
+	const [date, setDate] = useState(JSON.parse(localStorage.getItem('date')) || ''
+	)
+
+	useEffect(() => {
+		localStorage.setItem('date', JSON.stringify(date))
+	}, [date])
 	
 	const [countplus, setCountplus] = useState(
 		JSON.parse(localStorage.getItem('countplus')) || 0
