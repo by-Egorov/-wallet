@@ -5,6 +5,8 @@ const Wallet = ({ todo, setTodo }) => {
 	const [textValue, setTextValue] = useState('')
 	const [numberValue, setNumberValue] = useState('')
 	const money = '₽'
+	const [date, setDate] = useState('')
+	
 	const [countplus, setCountplus] = useState(
 		JSON.parse(localStorage.getItem('countplus')) || 0
 	)
@@ -67,17 +69,22 @@ const Wallet = ({ todo, setTodo }) => {
 		setBalance(0)
 		setCountplus(0)
 		setCountminus(0)
+		setDate(
+			new Date().toLocaleString()
+		)
 	}
+	
+
 
 	return (
 		<div className='wrapper'>
 			<div className='header'>
 				<div className='header__title'>Wallet</div>
-				{/* <div className='header__subtitle'>Калькулятор расходов</div> */}
+				<div className="date">{date}</div>
 				<div className="clearHistory">
 						<button onClick={() => {clearCalc()}}>
-						Очистить
-						<i class="fa fa-trash-o" aria-hidden="true"></i>
+						Новая запись
+						<i class="fa fa-refresh" aria-hidden="true"></i>
 						</button>
 					</div>
 			</div>
@@ -109,11 +116,11 @@ const Wallet = ({ todo, setTodo }) => {
 			</div>
 			<div className='story'>
 				<div className='story__title'>
-					<div className="title">История</div>
+					{/* <div className="title">История</div> */}
 					<div className="clearHistory">
 						<button onClick={() => {clearHistory()}}>
-						Очистить
-						<i class="fa fa-trash-o" aria-hidden="true"></i>
+						Новая история
+						<i class="fa fa-refresh" aria-hidden="true"></i>
 						</button>
 					</div>
 					</div>
