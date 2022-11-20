@@ -76,6 +76,7 @@ ul {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		row-gap: 10px;
 		border-right: 0.5px solid #c4c4c4;
 		&-title {
 			font-weight: 600;
@@ -90,6 +91,7 @@ ul {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		row-gap: 10px;
 		position: relative;
 		&-title {
 			font-weight: 600;
@@ -111,7 +113,9 @@ ul {
 	&__title {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-around;
+		width: 100%;
+
 	}
 	&__list {
 		display: flex;
@@ -153,6 +157,7 @@ ul {
 		outline: none;
 		cursor: pointer;
 		& i {
+			color: red;
 			padding-left: 5px;
 		}
 	}

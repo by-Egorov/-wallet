@@ -72,8 +72,8 @@ const Wallet = ({ todo, setTodo }) => {
 	return (
 		<div className='wrapper'>
 			<div className='header'>
-				<div className='header__title'>Кошелек</div>
-				<div className='header__subtitle'>Калькулятор расходов</div>
+				<div className='header__title'>Wallet</div>
+				{/* <div className='header__subtitle'>Калькулятор расходов</div> */}
 				<div className="clearHistory">
 						<button onClick={() => {clearCalc()}}>
 						Очистить
@@ -109,7 +109,7 @@ const Wallet = ({ todo, setTodo }) => {
 			</div>
 			<div className='story'>
 				<div className='story__title'>
-					<div className="title">История расходов</div>
+					<div className="title">История</div>
 					<div className="clearHistory">
 						<button onClick={() => {clearHistory()}}>
 						Очистить
