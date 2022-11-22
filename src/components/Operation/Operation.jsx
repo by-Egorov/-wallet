@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Operation = ({ addTodo, addTodoR, textValue, setTextValue, numberValue, setNumberValue }) => {
 	return (
 		<div className='operation'>

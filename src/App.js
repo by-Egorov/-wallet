@@ -3,7 +3,6 @@ import Balance from './components/Balance/Balance'
 import Header from './components/Header/Header'
 import Operation from './components/Operation/Operation'
 import Story from './components/Story/ Story'
-// import Wallet from './components/Wallet'
 import uuid from 'react-uuid'
 
 
@@ -50,37 +49,41 @@ function App() {
 	}, [balance])
 
 	function addTodo() {
-		setTodo([
-			...todo,
-			{
-				id: uuid(),
-				title: textValue,
-				data: new Date().toLocaleDateString(),
-				num: numberValue,
-				class: 'receivedBy',
-			},
-		])
-		setBalance(balance + Number(numberValue))
-		setCountplus(countplus + Number(numberValue))
-		setTextValue('')
-		setNumberValue('')
+		if (textValue && numberValue != '') {
+			setTodo([
+				...todo,
+				{
+					id: uuid(),
+					title: textValue,
+					data: new Date().toLocaleDateString(),
+					num: numberValue,
+					class: 'receivedBy',
+				},
+			])
+			setBalance(balance + Number(numberValue))
+			setCountplus(countplus + Number(numberValue))
+			setTextValue('')
+			setNumberValue('')
+		} alert('Enter a description and amount')
 	}
 
 	function addTodoR() {
-		setTodo([
-			...todo,
-			{
-				id: uuid(),
-				title: textValue,
-				data: new Date().toLocaleDateString(),
-				num: numberValue,
-				class: 'spentOn',
-			},
-		])
-		setCountminus(countminus + Number(numberValue))
-		setBalance(balance - Number(numberValue))
-		setTextValue('')
-		setNumberValue('')
+		if(textValue && numberValue != '') {
+			setTodo([
+				...todo,
+				{
+					id: uuid(),
+					title: textValue,
+					data: new Date().toLocaleDateString(),
+					num: numberValue,
+					class: 'spentOn',
+				},
+			])
+			setCountminus(countminus + Number(numberValue))
+			setBalance(balance - Number(numberValue))
+			setTextValue('')
+			setNumberValue('')
+		} alert('Enter a description and amount')
 	}
 	function clearHistory() {
 		if (window.confirm('You want to delette?')) {
@@ -104,8 +107,8 @@ function App() {
 			{/* <Wallet todo={todo} setTodo={setTodo} /> */}
 			<Header clearCalc={clearCalc} date={date} />
 			<Balance money={money} balance={balance} countplus={countplus} countminus={countminus} />
-			<Story money={money} clearHistory={clearHistory} todo={todo}/>
-			<Operation todo={todo} setTodo={setTodo} addTodo={addTodo} addTodoR={addTodoR} numberValue={numberValue} setNumberValue={setNumberValue} textValue={textValue} setTextValue={setTextValue}/>
+			<Story money={money} clearHistory={clearHistory} todo={todo} />
+			<Operation todo={todo} setTodo={setTodo} addTodo={addTodo} addTodoR={addTodoR} numberValue={numberValue} setNumberValue={setNumberValue} textValue={textValue} setTextValue={setTextValue} />
 		</div>
 	)
 }
