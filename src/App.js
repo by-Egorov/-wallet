@@ -49,7 +49,7 @@ function App() {
 	}, [balance])
 
 	function addTodo() {
-		if (textValue && numberValue != '') {
+		if (textValue && numberValue !== '') {
 			setTodo([
 				...todo,
 				{
@@ -62,13 +62,14 @@ function App() {
 			])
 			setBalance(balance + Number(numberValue))
 			setCountplus(countplus + Number(numberValue))
-			setTextValue('')
-			setNumberValue('')
-		} alert('Enter a description and amount')
+
+		} else { alert('Enter a description and amount') }
+		setTextValue('')
+		setNumberValue('')
 	}
 
 	function addTodoR() {
-		if(textValue && numberValue != '') {
+		if (textValue && numberValue !== '') {
 			setTodo([
 				...todo,
 				{
@@ -81,9 +82,10 @@ function App() {
 			])
 			setCountminus(countminus + Number(numberValue))
 			setBalance(balance - Number(numberValue))
-			setTextValue('')
-			setNumberValue('')
-		} alert('Enter a description and amount')
+
+		} else { alert('Enter a description and amount') }
+		setTextValue('')
+		setNumberValue('')
 	}
 	function clearHistory() {
 		if (window.confirm('You want to delette?')) {
