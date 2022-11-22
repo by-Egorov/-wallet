@@ -1,20 +1,40 @@
 import React from 'react'
+import Tippy from '@tippy.js/react'
+import 'tippy.js/dist/tippy.css'
 
-const Story = () => {
+const Story = ({ money, clearHistory, todo }) => {
 	return (
 		<div className='story'>
-			<div className='story__title'>История расходов</div>
-			<ul className='story__list'>
-			<li className='story__item-income'>
-					<span className='story__item-title'><span className='income__text'>Получил зарплату</span></span>
-					<span className='income__number'>+30000₽</span>
-				</li>
-				<li className='story__item-expenses'>
-					<span className='story__item-title'><span className='expenses__text'>Заплатил за интренет</span></span>
-					<span className='expenses__number'>-700₽</span>
-				</li>
-			</ul>
-		</div>
+				<div className='story__title'>
+					{/* <div className="title">История</div> */}
+					<div className='clearHistory'>
+						<button
+							onClick={() => {
+								clearHistory()
+							}}
+						>
+							new story
+							<i class='fa fa-refresh' aria-hidden='true'></i>
+						</button>
+					</div>
+				</div>
+
+				<ul className='story__list'>
+					{todo.map((item) => (
+						<Tippy content={item.data}>
+							<li
+								key={item.id}
+								className={'story__item-income ' + item.class}
+							>
+								<span className='story__item-title'>{item.title}</span>
+								<span className='income__number'>
+									{item.num} {money}
+								</span>
+							</li>
+						</Tippy>
+					))}
+				</ul>
+			</div>
 	)
 }
 

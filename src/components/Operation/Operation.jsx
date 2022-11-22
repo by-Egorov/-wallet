@@ -1,27 +1,46 @@
 import React from 'react'
 
-const Operation = () => {
+
+const Operation = ({ addTodo, addTodoR, textValue, setTextValue, numberValue, setNumberValue }) => {
 	return (
 		<div className='operation'>
 			<div className='operation__title'>
-				<p>Новая запись</p>
+				<p>New entry</p>
 			</div>
-			<form className='operation__form'>
+			<div className='operation__form'>
 				<input
 					className='operation__form--text'
 					type='text'
-					placeholder='Введите наименование операции'
+					placeholder='Enter a description'
+					value={textValue}
+					onChange={(e) => setTextValue(e.target.value)}
 				/>
 				<input
 					className='operation__form--num'
 					type='text'
-					placeholder='Введите сумму'
+					placeholder='Enter amount'
+					value={numberValue}
+					onChange={(e) => setNumberValue(e.target.value)}
 				/>
 				<div className='operation__buttons'>
-					<button className='operation__buttons--income'>Доход</button>
-					<button className='operation__buttons--expenses'>Расход</button>
+					<button
+						className='operation__buttons--income'
+						onClick={() => {
+							addTodo()
+						}}
+					>
+						income
+					</button>
+					<button
+						className='operation__buttons--expenses'
+						onClick={() => {
+							addTodoR()
+						}}
+					>
+						expenses
+					</button>
 				</div>
-			</form>
+			</div>
 		</div>
 	)
 }
