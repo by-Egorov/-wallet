@@ -18,7 +18,9 @@ ul {
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	row-gap: 50px;
+	align-items: center;
+	justify-content: center;
+	row-gap: 20px;
 }
 
 //Header
@@ -115,13 +117,12 @@ ul {
 		align-items: center;
 		justify-content: space-around;
 		width: 100%;
-
 	}
 	&__list {
 		display: flex;
 		flex-direction: column;
 		row-gap: 10px;
-		max-height: 250px;
+		max-height: 200px;
 		overflow: scroll;
 	}
 	&__item-income {
@@ -147,7 +148,6 @@ ul {
 	font-weight: 700;
 }
 .clearHistory {
-	
 	& button {
 		color: inherit;
 		border: none;
@@ -176,15 +176,81 @@ ul {
 }
 
 //Operation
+.modal {
+	position: relative;
+	bottom: 0;
+	left: 0;
+	display: none;
+	pointer-events: none;
+	transition: 0.4s all;
+	animation: close .4s linear;
+	&.active {
+		display: block;
+		animation: open .3s linear;
+		transition: 0.4s all;
+		pointer-events: all;
+	}
+}
+@keyframes open {
+	0% {
+		opacity: 0.2;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes close {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0.2;
+	}
+}
+.open {
+	display: flex;
+	justify-content: center;
+	animation: close .4s linear;
+	&__operation {
+		width: 53px;
+		height: 50px;
+		display: none;
+		background: transparent;
+		border: none;
+		transition: 0.4s all;
+		&.active {
+			display: block;
+			transition: 0.4s all;
+		}
+		& i {
+			font-size: 42px;
+		}
+	}
+}
 .operation {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	width: 350px;
 	background: #4444;
 	border-radius: 27px;
 	padding-bottom: 20px;
-	margin: 0 auto;
+	position: relative;
+	// margin: 0 auto;
+	&__close {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		font-size: 18px;
+		color: #fff;
+	}
 	&__title {
 		font-weight: 700;
 	}

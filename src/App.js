@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Operation from './components/Operation/Operation'
 import Story from './components/Story/ Story'
 import uuid from 'react-uuid'
+import ButtonOperation from './components/Operation/ButtonOperation'
 
 
 
@@ -62,6 +63,7 @@ function App() {
 			])
 			setBalance(balance + Number(numberValue))
 			setCountplus(countplus + Number(numberValue))
+			setModalActive(false)
 
 		} else { alert('Enter a description and amount') }
 		setTextValue('')
@@ -82,6 +84,7 @@ function App() {
 			])
 			setCountminus(countminus + Number(numberValue))
 			setBalance(balance - Number(numberValue))
+			setModalActive(false)
 
 		} else { alert('Enter a description and amount') }
 		setTextValue('')
@@ -102,15 +105,16 @@ function App() {
 		}
 		return
 	}
-
+	const [modalActive, setModalActive] = useState(true)
 
 	return (
 		<div className="wrapper">
 			{/* <Wallet todo={todo} setTodo={setTodo} /> */}
 			<Header clearCalc={clearCalc} date={date} />
 			<Balance money={money} balance={balance} countplus={countplus} countminus={countminus} />
-			<Story money={money} clearHistory={clearHistory} todo={todo} />
-			<Operation todo={todo} setTodo={setTodo} addTodo={addTodo} addTodoR={addTodoR} numberValue={numberValue} setNumberValue={setNumberValue} textValue={textValue} setTextValue={setTextValue} />
+			<Story money={money} clearHistory={clearHistory} todo={todo} active={modalActive} setActive={setModalActive} />
+			<ButtonOperation active={modalActive} setActive={setModalActive}/>
+			<Operation todo={todo} setTodo={setTodo} addTodo={addTodo} addTodoR={addTodoR} numberValue={numberValue} setNumberValue={setNumberValue} textValue={textValue} setTextValue={setTextValue} active={modalActive} setActive={setModalActive} />
 		</div>
 	)
 }
