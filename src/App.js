@@ -3,8 +3,8 @@ import Balance from './components/Balance/Balance'
 import Header from './components/Header/Header'
 import Operation from './components/Operation/Operation'
 import Story from './components/Story/ Story'
-import uuid from 'react-uuid'
 import ButtonOperation from './components/Operation/ButtonOperation'
+import uuid from 'react-uuid'
 
 
 

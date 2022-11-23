@@ -1,0 +1,32 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+	&__title {
+		font-size: 28px;
+		font-weight: 700;
+	}
+	&__subtitle {
+		font-weight: 700;
+	}
+}
+.date {
+	color: green;
+}
+.clearHistory {
+	& button {
+		color: inherit;
+		border: none;
+		padding: 5px 10px;
+		background: transparent;
+		border-radius: 7px;
+		outline: none;
+		font-family: inherit;
+		cursor: pointer;
+		& i {
+			color: red;
+			padding-left: 5px;
+		}
+	}
+}

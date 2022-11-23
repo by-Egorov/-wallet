@@ -1,13 +1,13 @@
 import React from 'react'
 import Tippy from '@tippy.js/react'
+import style from '../Story/Story.module.scss'
 import 'tippy.js/dist/tippy.css'
 
 const Story = ({ money, clearHistory, todo, edit, setEdit }) => {
 	return (
-		<div className='story'>
-			<div className='story__title'>
-				{/* <div className="title">История</div> */}
-				<div className='clearHistory'>
+		<div className={style.story}>
+			<div className={style.story__title}>
+				<div className={style.clearHistory}>
 					<button
 						onClick={() => {
 							clearHistory()
@@ -19,21 +19,21 @@ const Story = ({ money, clearHistory, todo, edit, setEdit }) => {
 				</div>
 			</div>
 
-			<ul className='story__list'>
+			<ul className={style.story__list}>
 				{todo.map((item) => (
 					<Tippy content={item.data}>
 						<li
 							key={item.id}
-							className={'story__item-income ' + item.class}
+							className={{style.story__item} + {item.class}}
 						>
-							<span className='story__item-title'>{item.title}</span>
-							<span className='story__item-number'>
+							<span className={style['story__item-title']}>{item.title}</span>
+							<span className={style['story__item-number']}>
 								{item.num} {money}
 							</span>
-							<button className='story__edit'>
+							<button className={style.story__edit}>
 								<i class='fa fa-pencil-square-o' aria-hidden='true'></i>
 							</button>
-							<button className='story__save'>
+							<button className={style.story__save}>
 							<i class="fa fa-floppy-o" aria-hidden="true"></i>
 							</button>
 						</li>
