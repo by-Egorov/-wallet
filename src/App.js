@@ -106,13 +106,14 @@ function App() {
 		return
 	}
 	const [modalActive, setModalActive] = useState(true)
+	const [edit, setEdit] = useState(null)
 
 	return (
 		<div className="wrapper">
 			{/* <Wallet todo={todo} setTodo={setTodo} /> */}
 			<Header clearCalc={clearCalc} date={date} />
 			<Balance money={money} balance={balance} countplus={countplus} countminus={countminus} />
-			<Story money={money} clearHistory={clearHistory} todo={todo} active={modalActive} setActive={setModalActive} />
+			<Story money={money} clearHistory={clearHistory} todo={todo} active={modalActive} setActive={setModalActive} edit={edit} setEdit={setEdit}/>
 			<ButtonOperation active={modalActive} setActive={setModalActive}/>
 			<Operation todo={todo} setTodo={setTodo} addTodo={addTodo} addTodoR={addTodoR} numberValue={numberValue} setNumberValue={setNumberValue} textValue={textValue} setTextValue={setTextValue} active={modalActive} setActive={setModalActive} />
 		</div>

@@ -127,18 +127,42 @@ ul {
 	}
 	&__item-income {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
+		position: relative;
 		width: 303px;
-		padding: 10px 20px;
+		padding: 10px 30px;
 		border-top: 1px solid #222;
 		border-bottom: 1px solid #222;
 		border-radius: 10px;
 	}
+	&__item-number {
+		
+	}
+	&__edit {
+		font-size: 12px;
+		align-content: flex-end;
+		position: absolute;
+		top: 5px;
+		right: 0;
+		border: none;
+		background: transparent;
+	}
+	&__save {
+		font-size: 14px;
+		align-content: flex-end;
+		position: absolute;
+		top: 20px;
+		right: 0;
+		border: none;
+		background: transparent;
+	}
+
 	&__item-expenses {
 		display: flex;
 		justify-content: space-between;
 		width: 303px;
-		padding: 10px 20px;
+		padding: 10px 30px;
 		border-top: 1px solid #222;
 		border-bottom: 1px solid #222;
 		border-radius: 10px;
@@ -183,10 +207,10 @@ ul {
 	display: none;
 	pointer-events: none;
 	transition: 0.4s all;
-	animation: close .4s linear;
+	animation: close 0.4s linear;
 	&.active {
 		display: block;
-		animation: open .3s linear;
+		animation: open 0.3s linear;
 		transition: 0.4s all;
 		pointer-events: all;
 	}
@@ -216,7 +240,7 @@ ul {
 .open {
 	display: flex;
 	justify-content: center;
-	animation: close .4s linear;
+	animation: close 0.4s linear;
 	&__operation {
 		width: 53px;
 		height: 50px;

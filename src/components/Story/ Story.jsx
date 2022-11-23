@@ -2,7 +2,7 @@ import React from 'react'
 import Tippy from '@tippy.js/react'
 import 'tippy.js/dist/tippy.css'
 
-const Story = ({ money, clearHistory, todo }) => {
+const Story = ({ money, clearHistory, todo, edit, setEdit }) => {
 	return (
 		<div className='story'>
 			<div className='story__title'>
@@ -27,14 +27,19 @@ const Story = ({ money, clearHistory, todo }) => {
 							className={'story__item-income ' + item.class}
 						>
 							<span className='story__item-title'>{item.title}</span>
-							<span className='income__number'>
+							<span className='story__item-number'>
 								{item.num} {money}
 							</span>
+							<button className='story__edit'>
+								<i class='fa fa-pencil-square-o' aria-hidden='true'></i>
+							</button>
+							<button className='story__save'>
+							<i class="fa fa-floppy-o" aria-hidden="true"></i>
+							</button>
 						</li>
 					</Tippy>
 				))}
 			</ul>
-			
 		</div>
 	)
 }
