@@ -105,16 +105,43 @@ function App() {
 		}
 		return
 	}
-	const [modalActive, setModalActive] = useState(true)
+
+	const [modalActive, setModalActive] = useState(false)
 	const [edit, setEdit] = useState(null)
+	const [valueOne, setValueOne] = useState('')
+	const [valueSecond, setValueSecond] = useState('')
+
+	function editTodo(id, title) {
+		setEdit(id)
+		console.log(edit)
+	}
+
+	function saveTodo(id) {
+		let newTodo = [...todo].map(item => {
+			if(item.id === id) {
+				item.title = valueOne
+				item.num = valueSecond
+			}
+			return item
+		})
+		setTodo(newTodo)
+		setBalance(balance - Number(valueSecond))
+		setCountplus(Number(valueSecond) - countplus)
+		setEdit(null)
+		setValueOne('')
+		setValueSecond('')
+	}
 
 	return (
 		<div className="wrapper">
-			{/* <Wallet todo={todo} setTodo={setTodo} /> */}
 			<Header clearCalc={clearCalc} date={date} />
+
 			<Balance money={money} balance={balance} countplus={countplus} countminus={countminus} />
-			<Story money={money} clearHistory={clearHistory} todo={todo} active={modalActive} setActive={setModalActive} edit={edit} setEdit={setEdit}/>
+
+			<Story money={money} clearHistory={clearHistory} todo={todo} active={modalActive} setActive={setModalActive} edit={edit} setEdit={setEdit} editTodo={editTodo} addTodo={addTodo} addTodoR={addTodoR} saveTodo={saveTodo} valueSecond={valueSecond} setValueSecond={setValueSecond} valueOne={valueOne} setValueOne={setValueOne}/>
+
 			<ButtonOperation active={modalActive} setActive={setModalActive}/>
+
 			<Operation todo={todo} setTodo={setTodo} addTodo={addTodo} addTodoR={addTodoR} numberValue={numberValue} setNumberValue={setNumberValue} textValue={textValue} setTextValue={setTextValue} active={modalActive} setActive={setModalActive} />
 		</div>
 	)

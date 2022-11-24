@@ -1,4 +1,5 @@
 import React from 'react'
+import style from '../Operation/Operation.module.scss'
 
 const Operation = ({
 	addTodo,
@@ -12,34 +13,34 @@ const Operation = ({
 }) => {
 	return (
 		<div
-			className={active ? 'modal active' : 'modal'}
+			className={active ? style.modal+ ' ' +style.active : style.modal}
 			onClick={() => setActive(false)}
 		>
-			<div className='operation' onClick={(e) => e.stopPropagation()}>
-				<div className="operation__close" onClick={() => setActive(false)}>
-				<i class="fa fa-times-circle-o" aria-hidden="true"></i>
+			<div className={style.operation} onClick={(e) => e.stopPropagation()}>
+				<div className={style.operation__close} onClick={() => setActive(false)}>
+				<i className="fa fa-times-circle-o" aria-hidden="true"></i>
 				</div>
-				<div className='operation__title'>
+				<div className={style.operation__title}>
 					<p>New entry</p>
 				</div>
-				<div className='operation__form'>
+				<div className={style.operation__form}>
 					<input
-						className='operation__form--text'
+						className={style['operation__form--text']}
 						type='text'
 						placeholder='Enter a description'
 						value={textValue}
 						onChange={(e) => setTextValue(e.target.value)}
 					/>
 					<input
-						className='operation__form--num'
+						className={style['operation__form--num']}
 						type='text'
 						placeholder='Enter amount'
 						value={numberValue}
 						onChange={(e) => setNumberValue(e.target.value)}
 					/>
-					<div className='operation__buttons'>
+					<div className={style.operation__buttons}>
 						<button
-							className='operation__buttons--income'
+							className={style['operation__buttons--income']}
 							onClick={() => {
 								addTodo()
 							}}
@@ -47,7 +48,7 @@ const Operation = ({
 							income
 						</button>
 						<button
-							className='operation__buttons--expenses'
+							className={style['operation__buttons--expenses']}
 							onClick={() => {
 								addTodoR();
 							}}
