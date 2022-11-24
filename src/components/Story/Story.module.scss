@@ -46,6 +46,7 @@
 		border: none;
 		background: transparent;
 		cursor: pointer;
+		color: inherit;
 	}
 	&__save {
 		font-size: 14px;
@@ -55,6 +56,8 @@
 		right: 0;
 		border: none;
 		background: transparent;
+		cursor: pointer;
+		color: inherit;
 	}
 	&__item-number {
 		padding-right: 20px;
