@@ -3,5 +3,5 @@
 Приложение для учета доходов и расходов.
 На стадии разработки(вносятся изменения в интерфейс 
 и функционал) <br/>
-<a href="egorov-wallet.vercel.app">-Wallet</a>
+<a href="https://egorov-wallet-e9pgvbjgz-by-egorov.vercel.app/">-Wallet</a>
 
