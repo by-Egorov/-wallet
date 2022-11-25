@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Operation from "./components/Operation/Operation";
 import Story from "./components/Story/ Story";
 import uuid from "react-uuid";
+import ButtonOperation from "./components/Operation/ButtonOperation";
 
 function App() {
   const [todo, setTodo] = useState(
@@ -145,6 +146,7 @@ function App() {
         active={modalActive}
         setActive={setModalActive}
       />
+      <ButtonOperation active={modalActive} setActive={setModalActive} />
     </div>
   );
 }

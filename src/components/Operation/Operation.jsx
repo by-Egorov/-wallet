@@ -1,6 +1,5 @@
 import React from "react";
 import style from "../Operation/Operation.module.scss";
-import ButtonOperation from "./ButtonOperation";
 
 const Operation = ({
   addTodo,
@@ -19,8 +18,6 @@ const Operation = ({
       className={active ? style.modal + " " + style.active : style.modal}
       onClick={() => setActive(false)}
     >
-      <ButtonOperation active={modalActive} setActive={setModalActive} />
-
       <div className={style.operation} onClick={(e) => e.stopPropagation()}>
         <div
           className={style.operation__close}
