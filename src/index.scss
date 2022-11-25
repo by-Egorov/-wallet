@@ -1,9 +1,10 @@
 body {
-	margin: 50px 0;
+	margin: 0;
 	font-family: 'Source Code Pro', monospace;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: #c3c3c3;
+	color: #fff;
+	background: #333;
 }
 
 code {
@@ -22,13 +23,16 @@ ul {
 	justify-content: center;
 	row-gap: 20px;
 }
-
+.up {
+	color: green;
+}
+.down {
+	color: red;
+}
 .receivedBy {
-	border-left: 7px solid green;
-	border-right: 7px solid green;
+	color: green;
 }
 .spentOn {
-	border-left: 7px solid red;
-	border-right: 7px solid red;
+	color: red;
 }
 
