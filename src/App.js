@@ -99,7 +99,6 @@ function App() {
     if (window.confirm("You want to delete?")) {
       setTodo([]);
     }
-    return;
   }
   function clearCalc() {
     if (window.confirm("You want to delete?")) {
@@ -108,7 +107,6 @@ function App() {
       setCountminus(0);
       setDate(new Date().toLocaleString());
     }
-    return;
   }
 
   const [modalActive, setModalActive] = useState(false);
